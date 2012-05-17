@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Image:</b>
+  <%= @cat.image %>
+</p>
+
+<p>
+  <b>Yesvotes:</b>
+  <%= @cat.yesvotes %>
+</p>
+
+<p>
+  <b>Totalvotes:</b>
+  <%= @cat.totalvotes %>
+</p>
+
+
+<%= link_to 'Edit', edit_cat_path(@cat) %> |
+<%= link_to 'Back', cats_path %>

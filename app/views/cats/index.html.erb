@@ -1,0 +1,18 @@
+<h1>WHICH CAT HAPPENS TO BE THE CUTEST?</h1>
+<p>only you and everyone else can decide</p>
+<br/><br/>
+<table>
+  <tr>
+    <td><h1><%= link_to "THIS CAT", cat_yes_path(@cat2.id, @cat1.id)%></h1></td>
+    <td><h1><%= link_to "THAT CAT", cat_yes_path(@cat1.id, @cat2.id)%></h1></td>
+</tr>
+    <td>
+<img height="600" width="600" src=<%= @cat2.image%>>
+</td><td>
+<img height="600" width="600" src=<%= @cat1.image%>>
+</td></tr>
+</table>
+<br/><br/>
+<h2>Most Votes</h2>
+<img height="600" width="600" src=<%= @top_cat.image%>>
+
