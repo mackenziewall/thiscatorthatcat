@@ -2,45 +2,30 @@ class CatsController < ApplicationController
   # GET /cats
   # GET /cats.json
   def index
+
     @cat1, @cat2 = Cat.two_random_cats
+    cat2 = Cat.find(1)
     p @cat1
+    p @cat2
+    p @cat2
     @top_cat = Cat.top_cat
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cats }
     end
   end
-
   # GET /cats/1
   # GET /cats/1.json
-
 def yes_vote
     @cat1 = Cat.find(params[:cat1_id])
     @cat2 = Cat.find(params[:cat2_id])
-
-
     @cat1.totalvotes += 1    
-
     @cat1.yesvotes += 1
-
     @cat1.save
-
-
     @cat2.totalvotes += 1    
-
     @cat2.save
-
     redirect_to root_path
   end
-
-
-
-
-
-
-
-
-
 
   def show
     @cat = Cat.find(params[:id])
@@ -71,7 +56,8 @@ def yes_vote
   # POST /cats.json
   def create
     @cat = Cat.new(params[:cat])
-
+    puts "*"*80
+p @cat
     respond_to do |format|
       if @cat.save
         format.html { redirect_to @cat, notice: 'Cat was successfully created.' }
@@ -87,6 +73,9 @@ def yes_vote
   # PUT /cats/1.json
   def update
     @cat = Cat.find(params[:id])
+
+    puts "*"*80
+    p params[:cat]
 
     respond_to do |format|
       if @cat.update_attributes(params[:cat])

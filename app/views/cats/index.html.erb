@@ -1,18 +1,36 @@
 <h1>WHICH CAT HAPPENS TO BE THE CUTEST?</h1>
 <p>only you and everyone else can decide</p>
-<br/><br/>
+<br/>
+
+  	<%= Cat.find(4).picture.url %><br>
+    <img height="600" width="600" src=<%= Cat.find(4).picture.url%>>
+
+
+
+<br/>
 <table>
   <tr>
-    <td><h1><%= link_to "THIS CAT", cat_yes_path(@cat2.id, @cat1.id)%></h1></td>
-    <td><h1><%= link_to "THAT CAT", cat_yes_path(@cat1.id, @cat2.id)%></h1></td>
+    <td><h1><%= link_to "THIS CAT", cat_yes_path(@cat2.id, @cat1.id)%></h1>
+    </td>
+    <td><h1><%= link_to "THAT CAT", cat_yes_path(@cat1.id, @cat2.id)%></h1>
+    </td>
 </tr>
-    <td>
-<img height="600" width="600" src=<%= @cat2.image%>>
-</td><td>
-<img height="600" width="600" src=<%= @cat1.image%>>
-</td></tr>
+  <tr>
+  	<td>
+  	<%= @cat2.picture.url%><br>
+    <img height="600" width="600" src=<%= @cat2.picture.url%>>
+    </td>
+    <td><%= @cat1.picture.url%><br>
+    <img height="600" width="600" src=<%= @cat1.picture.url%>>
+    </td>
+</tr>
 </table>
 <br/><br/>
 <h2>Most Votes</h2>
 <img height="600" width="600" src=<%= @top_cat.image%>>
 
+<br/>
+
+
+<br/>
+<h1><%= link_to "NEW CAT", new_cat_path%></h1>

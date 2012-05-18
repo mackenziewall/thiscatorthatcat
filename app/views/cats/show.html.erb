@@ -15,6 +15,7 @@
   <%= @cat.totalvotes %>
 </p>
 
+<%= image_tag @cat.picture.url %>
 
 <%= link_to 'Edit', edit_cat_path(@cat) %> |
 <%= link_to 'Back', cats_path %>
