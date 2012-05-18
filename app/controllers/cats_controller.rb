@@ -4,7 +4,6 @@ class CatsController < ApplicationController
   def index
 
     @cat1, @cat2 = Cat.two_random_cats
-    cat2 = Cat.find(1)
     p @cat1
     p @cat2
     p @cat2
