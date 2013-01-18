@@ -8,6 +8,7 @@ class CatsController < ApplicationController
     p @cat2
     p @cat2
     @top_cat = Cat.top_cat
+    @ugliest_cat = Cat.ugliest_cat
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cats }
